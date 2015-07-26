@@ -1,0 +1,52 @@
+<template id="myPizzaTemplate">
+  <style>
+.pizza {
+  display: table;
+  width: 100%;
+  margin: 0 100px 0 100px;
+}
+
+.pizza .image {
+  width: 10%;
+  float: left;
+}
+
+.pizza .image img{
+  width: 100px;
+}
+
+.pizza .text {
+  width: 90%;
+  float: left;
+}
+  </style>
+  <div class="pizza">
+    <div class="image">
+      <img src="images/pizza.png" srcset="images/pizza.webp">
+    </div>
+    <div class="text">
+      <content></content>
+    </div>
+  </div>
+</template>
+
+<script>
+
+var MyPizzaPrototype = Object.create(HTMLElement.prototype, {
+  name: {
+    value: ""
+  }
+});
+
+MyPizzaPrototype.createdCallback = function () {
+  var shadow = this.createShadowRoot();
+  var template = document.querySelector('#myPizzaTemplate');
+  var clone = document.importNode(template.content, true);
+  shadow.appendChild(clone);
+};
+
+var MyPizza = document.registerElement('my-pizza', {
+  prototype: MyPizzaPrototype
+});
+
+</script>

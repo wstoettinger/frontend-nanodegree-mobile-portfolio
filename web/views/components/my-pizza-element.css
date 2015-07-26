@@ -1,0 +1,15 @@
+.pizza .name {
+  font-weight: bold;
+}
+
+.pizza .ingredients li {
+  display: inline;
+}
+
+.pizza .ingredients li::after {
+  content: ", ";
+}
+
+.pizza .ingredients li:last-child::after {
+  content: "";
+}
