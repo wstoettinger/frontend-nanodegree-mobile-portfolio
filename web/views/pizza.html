@@ -7,13 +7,6 @@
   <!-- Include JQery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- END Include JQery -->
-  
-  <!-- include the My-Pizza Compoinent -->
-  <link rel="stylesheet" href="components/my-pizza-element.css">
-  <script src="components/my-pizza-element.js"></script>
-
-  <!-- Html template inclusion only works when run on a webserver: -->
-  <!-- link rel="import" href="components/my-pizza-element.html" -->
 </head>
 
 <body>
@@ -106,6 +99,15 @@
       <div class="col-md-12">
         <h2 style="text-align: center">Our Pizzas!</h2>
         <!-- Resizing is quite heavy in html5, here this functionality is absolutely useless and annoying -->
+        <div class="row">
+          <div class="col-md-12">
+            <em>What size pizza would you like? Use the slider below to change pizza sizes.</em>
+          </div>
+          <div id="pizzaSize" class="col-md-6">Medium</div>
+          <div class="col-md-12">
+            <input id="sizeSlider" type="range" min="1" max="3" value="2" step="1" onchange="resizePizzas(this.value)"></input>
+          </div>
+        </div>
         <div id="randomPizzas" class="row">
           <div is="my-pizza" id="pizza0" class="pizza">
               <p class="name">The Udacity Special</p>
@@ -134,5 +136,10 @@
   </div>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
-
 </html>
+
+<!-- include the My-Pizza Compoinent -->
+<link rel="stylesheet" href="components/my-pizza-element.css">
+<script src="components/my-pizza-element.js"></script>
+<!-- Html template inclusion only works when run on a webserver: -->
+<!-- link rel="import" href="components/my-pizza-element.html" -->
