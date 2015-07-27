@@ -363,7 +363,8 @@ var resizePizzas = function (size) {
 
   function changePizzaSizes(size) {
     // changing pizza sizes via a CSS attribute
-    sizeStyle.innerHTML = ".mover { width: " + getSize(size) + "px;}";
+    //sizeStyle.innerHTML = ".mover { width: " + getSize(size) + "px;}"; // this would change the background pizzas
+    sizeStyle.innerHTML = ".pizza::shadow .image img { width: " + getSize(size) + "px;}";
   }
   changePizzaSizes(size);
 
@@ -432,10 +433,12 @@ function updatePositions() {
     // this gives a way smoother animation for the pizzas
     // adding math.floor to prevent sub-pixel rendering
     var phaseX = Math.floor(Math.sin((lastScrollY / 1250) + i) * 50);
-    var phaseY = Math.floor(Math.sin((lastScrollY / 1250) + i + 90) * 50);
 
+    //var phaseY = Math.floor(Math.sin((lastScrollY / 1250) + i + 90) * 50);
     // this even makes pizzas rotating ;)
-    movers[i].style.transform = "translate(" + phaseX + "px, " + phaseY + "px)";
+    //movers[i].style.transform = "translate(" + phaseX + "px, " + phaseY + "px)";
+
+    movers[i].style.transform = "translateX(" + phaseX + "px)";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
