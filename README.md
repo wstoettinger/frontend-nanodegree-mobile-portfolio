@@ -25,6 +25,9 @@ most important ones of pizza.html:
 - put each pizza.mover in a separate layer via a css hack.
 - scroll rendering via requestAnimationFrame (while preventing multiple renderings at the same time).
 
+what i didn't do (yet):
+- use flexbox for layouting
+
 In case there is more i can do, let me know ;) #perfmatters 
 
 PD: after doing all the performance optimizations i figured that the Udacity page is doing a quite poor job in terms of performance, maybe you should have a look at it ;P
