@@ -453,7 +453,7 @@ function updatePositions() {
 // runs updatePositions on scroll
 window.addEventListener('scroll', function () {
 
-  // Store the scroll value
+  // Store the scroll value (this boosts performance dramatically)
   lastScrollY = window.scrollY;
 
   // Prevent multiple rAF callbacks.
