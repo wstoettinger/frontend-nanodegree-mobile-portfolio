@@ -1,0 +1,1 @@
+.pizza .name{font-weight:700}.pizza .ingredients li{display:inline}.pizza .ingredients li::after{content:", "}.pizza .ingredients li:last-child::after{content:""}

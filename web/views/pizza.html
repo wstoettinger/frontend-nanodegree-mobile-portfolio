@@ -1,12 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>  
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
   <title>My Pizza Page</title>
   <!-- Include JQery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- END Include JQery -->
+  
+  <!-- include the My-Pizza Compoinent -->
+  <link rel="stylesheet" href="components/my-pizza-element.min.css">
+  <script src="components/my-pizza-element.min.js"></script>
+  <!-- Html template inclusion only works when run on a webserver: -->
+  <!-- link rel="import" href="components/my-pizza-element.html" -->
 </head>
 
 <body>
@@ -137,9 +143,3 @@
   <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
-
-<!-- include the My-Pizza Compoinent -->
-<link rel="stylesheet" href="components/my-pizza-element.css">
-<script src="components/my-pizza-element.js"></script>
-<!-- Html template inclusion only works when run on a webserver: -->
-<!-- link rel="import" href="components/my-pizza-element.html" -->
