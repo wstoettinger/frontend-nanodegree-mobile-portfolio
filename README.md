@@ -30,4 +30,4 @@ what i didn't do (yet):
 
 In case there is more i can do, let me know ;) #perfmatters 
 
-PD: after doing all the performance optimizations i figured that the Udacity page is doing a quite poor job in terms of performance, maybe you should have a look at it ;P
+PD: after doing all the performance optimizations i figured that the Udacity page is doing a quite poor job in terms of performance, maybe I should have a look at it ;P
