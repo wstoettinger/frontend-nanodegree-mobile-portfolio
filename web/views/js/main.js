@@ -444,6 +444,9 @@ function logAverageFrame(times) { // times is the array of User Timing measureme
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
+var lastScrollY = 0;
+var scheduledAnimationFrame = false;
+
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
 
@@ -458,7 +461,7 @@ function updatePositions() {
     // using a different 'phase' for each pizza takes longer but they don't move synchronized 
     // this gives a way smoother animation for the pizzas:
     // adding math.floor to prevent sub-pixel rendering
-    var phase = Math.floor(Math.sin((document.body.scrollTop / 1250) + i) * 50);
+    var phase = Math.floor(Math.sin((lastScrollY / 1250) + i) * 50);
     movers[i].style.transform = "translateX(" + phase + "px)";
   }
 
@@ -470,10 +473,23 @@ function updatePositions() {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
+
+  scheduledAnimationFrame = false;
 }
 
 // runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+window.addEventListener('scroll', function () {
+
+  // Store the scroll value for laterz.
+  lastScrollY = window.scrollY;
+
+  // Prevent multiple rAF callbacks.
+  if (scheduledAnimationFrame)
+    return;
+
+  scheduledAnimationFrame = true;
+  requestAnimationFrame(updatePositions);
+});
 
 var movers = [];
 
