@@ -1,4 +1,9 @@
 ## Website Performance Optimization portfolio project
+=============================================
+
+This code was downloaded from https://github.com/wstoettinger/frontend-nanodegree-mobile-portfolio
+
+(c) 2015 Wolfgang Stöttinger
 
 this page is hosted here to run tests: https://secure-fjord-1029.herokuapp.com/
 
